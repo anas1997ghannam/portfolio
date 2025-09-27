@@ -77,23 +77,19 @@ export default function Navbar() {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: "transparent", // 🔥 شفاف كلياً
           boxShadow: "none",
         }}
       >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          {/* Logo */}
-          <Typography variant="h6" color="primary">
-            {t("name")}
-          </Typography>
-
-          {/* Links / Menu */}
+        <Toolbar sx={{ display: "flex", justifyContent: "center" }}>
           {isMobile ? (
             <>
+              {/* Mobile Menu */}
               <IconButton
                 edge="end"
                 color="inherit"
                 onClick={() => setDrawerOpen(true)}
+                sx={{ ml: "auto" }}
               >
                 <MenuIcon />
               </IconButton>
@@ -103,8 +99,8 @@ export default function Navbar() {
                 onClose={() => setDrawerOpen(false)}
                 PaperProps={{
                   sx: {
-                    backgroundColor: theme.palette.background.default, // Use theme background color
-                    color: theme.palette.text.primary, // Use theme text color
+                    backgroundColor: theme.palette.background.default,
+                    color: theme.palette.text.primary,
                   },
                 }}
               >
@@ -148,7 +144,44 @@ export default function Navbar() {
               </Drawer>
             </>
           ) : (
-            <Box>{renderButtons}</Box>
+            // Desktop Capsule Navbar with Glassmorphism
+            <Box
+              sx={{
+                backdropFilter: "blur(12px)",
+                backgroundColor: "rgba(44,44,44,0.35)", // شفافية
+                border: `1px solid ${theme.palette.primary.main}55`,
+                borderRadius: "999px",
+                px: 4,
+                py: 1,
+                display: "flex",
+                gap: 3,
+                justifyContent: "center",
+                alignItems: "center",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+                color: theme.palette.text.primary,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: "rgba(44,44,44,0.55)", // 🔥 تغمق شوي عند الهوفر
+                  border: `1px solid ${theme.palette.primary.main}AA`,
+                  transform: "scale(1.02)",
+                },
+              }}
+            >
+              {/* اسم الموقع / الاسم */}
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: "bold",
+                  color: theme.palette.primary.main,
+                  mr: 2,
+                }}
+              >
+                {t("name")}
+              </Typography>
+
+              {/* الروابط */}
+              {renderButtons}
+            </Box>
           )}
         </Toolbar>
       </AppBar>
