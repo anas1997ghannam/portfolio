@@ -1,17 +1,9 @@
+//path: app/layout.tsx
 "use client";
 import { LanguageProvider } from "../contexts/LanguageContext";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-
-const theme = createTheme({
-  palette: {
-    background: { default: "#2c2c2c" },
-    primary: { main: "#A259FF" },
-    secondary: { main: "#CFFFE5" },
-    text: { primary: "#FFFFFF", secondary: "#CFFFE5" },
-  },
-  typography: { fontFamily: "Inter, sans-serif" },
-});
+import { darkTheme } from "../themes/theme";
 
 export default function RootLayout({
   children,
@@ -24,7 +16,7 @@ export default function RootLayout({
         <title>Anas Ghannam | Frontend Developer</title>
       </head>
       <body>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>

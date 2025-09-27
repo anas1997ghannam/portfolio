@@ -1,12 +1,16 @@
 {
-  "home": {
-    "title": "Hi, I'm Anas Ghannam",
-    "subtitle": "Frontend / Fullstack Developer",
-    "cta": "View My Work"
-  },
   "navbar": {
+    "home": "Home",
+    "about": "About",
     "projects": "Projects",
     "contact": "Contact",
-    "switchLang": "العربية"
+    "switchLang": "العربية",
+    "name": "Anas Ghannam"
+  },
+  "hero": {
+    "title": "Hi, I'm Anas",
+    "subtitle": "Frontend & Fullstack Developer",
+    "contactBtn": "Contact Me",
+    "projectsBtn": "My Projects"
   }
 }

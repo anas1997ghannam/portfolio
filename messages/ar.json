@@ -1,12 +1,16 @@
 {
-  "home": {
-    "title": "مرحباً، أنا أنس غنام",
-    "subtitle": "مطور واجهات أمامية وواجهات خلفية",
-    "cta": "عرض أعمالي"
-  },
   "navbar": {
+    "home": "الرئيسية",
+    "about": "عني",
     "projects": "المشاريع",
     "contact": "تواصل",
-    "switchLang": "English"
+    "switchLang": "English",
+    "name": "أنس غنام"
+  },
+  "hero": {
+    "title": "مرحباً، أنا أنس غنام",
+    "subtitle": "مطور واجهات أمامية وفل ستاك",
+    "contactBtn": "تواصل معي",
+    "projectsBtn": "مشاريعي"
   }
 }
